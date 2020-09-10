@@ -4,15 +4,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
- ?>
-
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Welcome</title>
     <?php include("include/head.php"); ?>
-
   </head>
   <body>
     <?php include("include/navigation.php"); ?>
@@ -30,9 +28,14 @@ error_reporting(E_ALL);
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla enim at dolorem omnis, excepturi alias doloribus, libero, voluptatibus suscipit accusamus dolore odit minus iusto. Harum natus quia rerum repellat dolorem.</p>
   </div>
 
+
+
+
 </div>
 
-  <?php include("include/scripts.php"); ?>
+
+
+<?php include("include/scripts.php"); ?>
 
   </body>
 </html>

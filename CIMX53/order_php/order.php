@@ -20,6 +20,11 @@
   <div class="row">
   <div class="col-md-12"><hr></div>
   <div class="col-md-6">
+    <?php
+    if(isset($errorMsg)){
+    echo $errorMsg; }
+    ?>
+
   <form method="POST" action="order_handler.php">
 
   <div class="form-group">
@@ -51,6 +56,15 @@
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="pepperoni" name="topping[]" value="Pepperoni">
     <label class="form-check-label" for="pepperoni">Pepperoni </label>
+  </div>
+
+  <div class="form-group">
+    <label for="size">Size</label>
+    <select class="form-control" name="size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
   </div>
 
   <div class="form-group">

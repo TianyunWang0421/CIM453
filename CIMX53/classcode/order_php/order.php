@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Order</title>
-
     <?php include("include/head.php"); ?>
-
   </head>
   <body>
   <?php include("include/navigation.php"); ?>
@@ -20,6 +18,12 @@
   <div class="row">
   <div class="col-md-12"><hr></div>
   <div class="col-md-6">
+  <?php
+  if(isset($errorMsg)){
+  echo $errorMsg;
+}
+  ?>
+
   <form method="POST" action="order_handler.php">
 
   <div class="form-group">
@@ -54,9 +58,19 @@
   </div>
 
   <div class="form-group">
+     <label for="size">Size</label>
+     <select class="form-control" name="size">
+       <option value="small">Small</option>
+       <option value="medium">Medium</option>
+       <option value="large">Large</option>
+     </select>
+   </div>
+
+  <div class="form-group">
     <label for="comments">Comments</label>
     <textarea name="comments" class="form-control" id="comments" rows="3"></textarea>
   </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
   </div>
@@ -64,7 +78,7 @@
   </div>
 </div>
 
-  <?php include("include/scripts.php"); ?>
+<?php include("include/scripts.php"); ?>
 
   </body>
 </html>
