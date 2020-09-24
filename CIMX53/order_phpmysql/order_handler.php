@@ -3,6 +3,8 @@
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
+//var_dump($_POST);
+
 //set default values up here
 $hasErrors = false;
 $priceList = array();
@@ -42,6 +44,12 @@ if ( isset($_POST['lastname']) && ($_POST['lastname'] != "") ) {
 
 if ( isset($_POST['address']) && ($_POST['address'] != "") ) {
   $address = $_POST['address'];
+  $address_2 = $_POST['address_2'];
+  $city = $_POST['city'];
+  $state = $_POST['state'];
+  $zip = $_POST['zip'];
+  $phone = $_POST['phone_number'];
+
 } else{
   $hasErrors = true;
   $errorMsg .= "<p>Address is required</p>";
@@ -63,10 +71,15 @@ if ( isset($_POST['size']) && ($_POST['size'] != "") ) {
 
 //echo "After size".$orderTotal."<br>";
 
+$toppings = "";
+
 if( isset($_POST['topping']) ){
   //$toppingPrice
   //counting items in array count($array)
   $totalToppings = $toppingPrice * count($_POST['topping']);
+  foreach($toppings as $topping){
+    $toppings $topping." , ";
+  }
 }
 $orderTotal += $totalToppings;
 //echo "This is after toppings".$orderTotal."<br>";
@@ -76,8 +89,23 @@ if ($hasErrors) {
   //die("You have errors.");
   include('order.php');
 }else {
-  //echo "No errors <br>";
   $comments = $_POST['comments'];
+
+  include('include/db.php');
+  $sql = "INSERT INTO `pizza_order` (`id`, `first_name`, `last_name`, `address`, `address_2`, `city`, `state`, `zip`, `size`, `toppings`, `comments`, `phone_number`, `order_total`)
+  VALUES (NULL, '$firstName', '$lastName', '$address', '$address_2', '$city', '$state', '$zip', '$size', '$toppings', '$comments', '$phone', '$orderTotal')";
+
+// perform the query
+mysqli_query($con, $sql);
+//echo("Error description: " . mysqli_error($con));
+
+// Print auto-generated id
+//echo "New record has id: " . mysqli_insert_id($con);
+
+mysqli_close($con);;
+
+
+  //echo "No errors <br>";
   include('thankyou.php');
 }
 

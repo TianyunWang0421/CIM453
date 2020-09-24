@@ -43,6 +43,35 @@
     <input name="address" type="text" class="form-control" id="address">
   </div>
 
+  <div class="form-group">
+    <label for="address_2">Addresss</label>
+    <input name="address_2" type="text" class="form-control" id="address_2">
+  </div>
+
+  <div class="form-group">
+    <label for="city">City</label>
+    <input name="city" type="text" class="form-control" id="city">
+  </div>
+
+  <div class="form-group">
+    <label for="state">State</label>
+    <select class="form-control" name="state">
+      <option value="FL">FL</option>
+      <option value="GA">GA</option>
+      <option value="CA">CA</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="zip">Zip</label>
+    <input name="zip" type="text" class="form-control" id="zip">
+  </div>
+
+  <div class="form-group">
+    <label for="phone_number">Phone</label>
+    <input name="phone_number" type="phone" class="form-control" id="phone_number">
+  </div>
+
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="Cheese">
     <label class="form-check-label" for="cheese">Cheese </label>

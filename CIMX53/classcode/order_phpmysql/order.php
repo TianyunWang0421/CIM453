@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Order</title>
-
     <?php include("include/head.php"); ?>
-
   </head>
   <body>
   <?php include("include/navigation.php"); ?>
@@ -20,10 +18,11 @@
   <div class="row">
   <div class="col-md-12"><hr></div>
   <div class="col-md-6">
-    <?php
-    if(isset($errorMsg)){
-    echo $errorMsg; }
-    ?>
+  <?php
+  if(isset($errorMsg)){
+  echo $errorMsg;
+}
+  ?>
 
   <form method="POST" action="order_handler.php">
 
@@ -43,8 +42,37 @@
     <input name="address" type="text" class="form-control" id="address">
   </div>
 
+  <div class="form-group">
+    <label for="address_2">Address 2</label>
+    <input name="address_2" type="text" class="form-control" id="address_2">
+  </div>
+
+  <div class="form-group">
+    <label for="city">City</label>
+    <input name="city" type="text" class="form-control" id="city">
+  </div>
+
+  <div class="form-group">
+     <label for="state">State</label>
+     <select class="form-control" name="state">
+       <option value="FL">FL</option>
+       <option value="GA">GA</option>
+       <option value="CA">CA</option>
+     </select>
+   </div>
+
+   <div class="form-group">
+     <label for="zip">Zip</label>
+     <input name="zip" type="text" class="form-control" id="zip">
+   </div>
+
+   <div class="form-group">
+     <label for="phone_number">Phone</label>
+     <input name="phone_number" type="phone" class="form-control" id="phone_number">
+   </div>
+
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="Cheese">
+    <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="cheese">
     <label class="form-check-label" for="cheese">Cheese </label>
   </div>
 
@@ -59,18 +87,19 @@
   </div>
 
   <div class="form-group">
-    <label for="size">Size</label>
-    <select class="form-control" name="size">
-      <option value="small">Small</option>
-      <option value="medium">Medium</option>
-      <option value="large">Large</option>
-    </select>
-  </div>
+     <label for="size">Size</label>
+     <select class="form-control" name="size">
+       <option value="small">Small</option>
+       <option value="medium">Medium</option>
+       <option value="large">Large</option>
+     </select>
+   </div>
 
   <div class="form-group">
     <label for="comments">Comments</label>
     <textarea name="comments" class="form-control" id="comments" rows="3"></textarea>
   </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
   </div>
@@ -78,7 +107,7 @@
   </div>
 </div>
 
-  <?php include("include/scripts.php"); ?>
+<?php include("include/scripts.php"); ?>
 
   </body>
 </html>
