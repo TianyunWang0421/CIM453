@@ -18,6 +18,11 @@
     <li class="nav-item">
       <a class="nav-link" href="order.php">Order</a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="orders.php">All Orders</a>
+    </li>
+
   </ul>
 </div>
 </nav>

@@ -77,8 +77,8 @@ if( isset($_POST['topping']) ){
   //$toppingPrice
   //counting items in array count($array)
   $totalToppings = $toppingPrice * count($_POST['topping']);
-  foreach($toppings as $topping){
-    $toppings $topping." , ";
+  foreach($_POST['topping'] as $topping){
+    $toppings .= $topping . ", ";
   }
 }
 $orderTotal += $totalToppings;

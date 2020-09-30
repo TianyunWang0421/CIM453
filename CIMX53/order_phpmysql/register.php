@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Order</title>
+    <title>Register</title>
 
     <?php include("include/head.php"); ?>
 
@@ -12,7 +12,7 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Order</h1>
+    <h1>Register</h1>
 
   </div>
 
@@ -25,7 +25,7 @@
     echo $errorMsg; }
     ?>
 
-  <form method="POST" action="order_handler.php">
+  <form method="POST" action="registration_handler.php">
 
   <div class="form-group">
     <label for="firstname">First Name</label>
@@ -36,6 +36,21 @@
   <div class="form-group">
     <label for="lastname">Last Name</label>
     <input name="lastname" type="text" class="form-control" id="lastname">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input name="email" type="email" class="form-control" id="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input name="password" type="text" class="form-control" id="password">
+  </div>
+
+  <div class="form-group">
+    <label for="password2">Confirm Password</label>
+    <input name="password2" type="text" class="form-control" id="password2">
   </div>
 
   <div class="form-group">
@@ -72,35 +87,7 @@
     <input name="phone_number" type="phone" class="form-control" id="phone_number">
   </div>
 
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="Cheese">
-    <label class="form-check-label" for="cheese">Cheese </label>
-  </div>
-
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="mushrooms" name="topping[]" value="Mushrooms">
-    <label class="form-check-label" for="mushrooms">Mushrooms </label>
-  </div>
-
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="pepperoni" name="topping[]" value="Pepperoni">
-    <label class="form-check-label" for="pepperoni">Pepperoni </label>
-  </div>
-
-  <div class="form-group">
-    <label for="size">Size</label>
-    <select class="form-control" name="size">
-      <option value="small">Small</option>
-      <option value="medium">Medium</option>
-      <option value="large">Large</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="comments">Comments</label>
-    <textarea name="comments" class="form-control" id="comments" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Register</button>
 </form>
   </div>
 
