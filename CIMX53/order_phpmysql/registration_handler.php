@@ -30,6 +30,17 @@ if ( isset($_POST['lastname']) && ($_POST['lastname'] != "") ) {
 
 if ( isset($_POST['email']) && ($_POST['email'] != "") ) {
   $email = $_POST['email'];
+  include('include/db.php');
+  $checkEmail = "SELECT * FROM users WHERE email = '$email'";
+  // Perform the query
+  $query = mysqli_query($con, $checkEmail);
+  //var_dump($query);
+  $totalresults = mysqli_num_rows($query);
+
+  if($totalresults != 0){
+    $hasErrors = true;
+    $errorMsg .= "<p>Email is registered.</p>";
+  }
 } else{
   $hasErrors = true;
   $errorMsg .= "<p>Email is required</p>";
@@ -84,7 +95,10 @@ mysqli_query($con, $sql);
 //echo "New record has id: " . mysqli_insert_id($con);
 
 mysqli_close($con);;
-  echo "No errors. User created. <br>";
+// echo "No errors. User created. <br>";
+
+//header("location: /");
+header("location: index.php");
 }
 
 ?>

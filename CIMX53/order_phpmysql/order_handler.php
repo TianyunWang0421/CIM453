@@ -1,4 +1,6 @@
 <?php
+include('include/login_check.php');
+$user_id = $_SESSION['user_id'];
 // Here we will handle the pizza order form
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST

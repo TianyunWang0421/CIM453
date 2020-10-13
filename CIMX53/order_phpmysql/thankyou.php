@@ -21,15 +21,20 @@
   <div class="col-md-12"><hr></div>
   <div class="col-md-6">
 
-  <h2>Your order will be delivered to: <br> <?php echo $address; ?> </h2>
-  <br>
-  <h2>Here is the summary of your order: </h2>
-  <p>Toppings: <?php $toppings = $_POST['topping'];
-    foreach($toppings as $topping){
-      echo $topping." - ";
-    }; ?> </p>
-  <p>Comments: <?php echo $comments; ?> </p>
-  <p>Your total is: $<?php echo $orderTotal; ?> </p>
+    <h2>Your order will be delivered to:<br> <?php echo $address; ?> </h2>
+    <p>Your total is: $<?php echo $orderTotal; ?></p>
+    <h3>Order Summary</h3>
+    <p>Size: <?php echo $size;?> Pizza </p>
+    <p>Additional Toppings: <?php
+    if( isset($_POST['topping']) ){
+      //$toppingPrice
+      // Counting items in array count($array)
+      foreach($_POST['topping'] as $topping){
+        echo $topping . " <br> ";
+      }
+    }
+    ?></p>
+    <p>Comments: <?php echo $comments; ?></p>
 
   </div>
 

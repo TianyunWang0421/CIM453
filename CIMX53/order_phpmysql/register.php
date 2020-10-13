@@ -29,18 +29,39 @@
 
   <div class="form-group">
     <label for="firstname">First Name</label>
-    <input name="firstname" type="text" class="form-control" id="firstname" aria-describedby="firstnamehelp" required>
+    <?php
+      if ( isset($_POST['firstname']) && ($_POST['firstname'] != "") ) {
+        $firstName = $_POST['firstname'];
+      } else {
+        $firstName = "";
+      }
+    ?>
+    <input name="firstname" type="text" class="form-control" id="firstname" aria-describedby="firstnamehelp" value="<?php echo $firstName;?>" required>
     <small id="firstnamehelp" class="form-text text-muted">Please enter ONLY your first name.</small>
   </div>
 
   <div class="form-group">
     <label for="lastname">Last Name</label>
-    <input name="lastname" type="text" class="form-control" id="lastname">
+    <?php
+      if( isset($_POST['lastname']) && ($_POST['lastname'] != "") ) {
+        $lastName = $_POST['lastname'];
+      } else {
+        $lastName = "";
+      }
+    ?>
+    <input name="lastname" type="text" class="form-control" id="lastname" value="<?php echo $lastName;?>">
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input name="email" type="email" class="form-control" id="email" required>
+    <?php
+      if( isset($_POST['email']) && ($_POST['email'] != "") ) {
+        $email = $_POST['email'];
+      } else {
+        $email = "";
+      }
+    ?>
+    <input name="email" type="email" class="form-control" id="email" value="<?php echo $email; ?>" required>
   </div>
 
   <div class="form-group">

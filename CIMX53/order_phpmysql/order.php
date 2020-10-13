@@ -9,6 +9,7 @@
   </head>
   <body>
   <?php include("include/navigation.php"); ?>
+  <?php include("include/login_check.php"); ?>
 
   <div class="container">
     <!-- Content here -->
@@ -25,52 +26,65 @@
     echo $errorMsg; }
     ?>
 
+<?php
+  //Remember that user_id is in thession $_SESSION['user_id'];
+  $user_id = $_SESSION['user_id'];
+  $sql = "SELECT * FROM users WHERE id = '$user_id'";
+  include('include/db.php');
+  $result = mysqli_query($con,$sql);
+
+  $row = mysqli_fetch_assoc($result);
+?>
+
   <form method="POST" action="order_handler.php">
 
   <div class="form-group">
     <label for="firstname">First Name</label>
-    <input name="firstname" type="text" class="form-control" id="firstname" aria-describedby="firstnamehelp" required>
+    <input value="<?php echo $row['first_name'];?>" name="firstname" type="text" class="form-control" id="firstname" aria-describedby="firstnamehelp" required>
     <small id="firstnamehelp" class="form-text text-muted">Please enter ONLY your first name.</small>
   </div>
 
   <div class="form-group">
     <label for="lastname">Last Name</label>
-    <input name="lastname" type="text" class="form-control" id="lastname">
+    <input value="<?php echo $row['last_name'];?>" name="lastname" type="text" class="form-control" id="lastname">
   </div>
 
   <div class="form-group">
     <label for="address">Address</label>
-    <input name="address" type="text" class="form-control" id="address">
+    <input value="<?php echo $row['address'];?>" name="address" type="text" class="form-control" id="address">
   </div>
 
   <div class="form-group">
-    <label for="address_2">Addresss 2</label>
-    <input name="address_2" type="text" class="form-control" id="address_2">
+    <label for="address_2">Address 2</label>
+    <input value="<?php echo $row['address_2'];?>" name="address_2" type="text" class="form-control" id="address_2">
   </div>
 
   <div class="form-group">
     <label for="city">City</label>
-    <input name="city" type="text" class="form-control" id="city">
+    <input value="<?php echo $row['city'];?>" name="city" type="text" class="form-control" id="city">
   </div>
 
   <div class="form-group">
-    <label for="state">State</label>
-    <select class="form-control" name="state">
-      <option value="FL">FL</option>
-      <option value="GA">GA</option>
-      <option value="CA">CA</option>
-    </select>
-  </div>
+     <label for="state">State</label>
+     <select class="form-control" name="state">
+       <option value="<?php echo $row['state'];?>" selected>
+         <?php echo $row['state'];?>
+       </option>
+       <option value="FL">FL</option>
+       <option value="GA">GA</option>
+       <option value="CA">CA</option>
+     </select>
+   </div>
 
-  <div class="form-group">
-    <label for="zip">Zip</label>
-    <input name="zip" type="text" class="form-control" id="zip">
-  </div>
+   <div class="form-group">
+     <label for="zip">Zip</label>
+     <input value="<?php echo $row['zip'];?>" name="zip" type="text" class="form-control" id="zip">
+   </div>
 
-  <div class="form-group">
-    <label for="phone_number">Phone</label>
-    <input name="phone_number" type="phone" class="form-control" id="phone_number">
-  </div>
+   <div class="form-group">
+     <label for="phone_number">Phone</label>
+     <input value="<?php echo $row['phone_number'];?>" name="phone_number" type="phone" class="form-control" id="phone_number">
+   </div>
 
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="Cheese">
