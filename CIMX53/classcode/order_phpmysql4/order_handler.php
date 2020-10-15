@@ -10,7 +10,6 @@ $user_id = $_SESSION['user_id'];
 //Set default values up here
 $hasErrors = false;
 $priceList = array();
-
 $priceList["small"] = 10;
 $priceList["medium"] = 15;
 $priceList["large"] = 20;
@@ -101,5 +100,7 @@ mysqli_close($con);
 
   include('thankyou.php');
 }
+
+
 
 ?>

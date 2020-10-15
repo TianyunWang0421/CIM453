@@ -1,5 +1,6 @@
 <?php
-
+include('include/login_check.php');
+$user_id = $_SESSION['user_id'];
 // Here we will handle the pizza order form
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
@@ -27,24 +28,7 @@ if( isset($_POST['lastname']) && ($_POST['lastname'] != "") ) {
   $hasErrors = true;
   $errorMsg .= "<p>Last name is required</p>";
 }
-if( isset($_POST['email']) && ($_POST['email'] != "") ) {
-  $email = $_POST['email'];
-  include('include/db.php');
-  $checkEmail = "SELECT * FROM users WHERE email = '$email'";
-  // Perform the query
-  $query = mysqli_query($con, $checkEmail);
-  //var_dump($query);
-  $totalresults = mysqli_num_rows($query);
 
-  if($totalresults != 0){
-    $hasErrors = true;
-    $errorMsg .= "<p>Email is registered.</p>";
-  }
-
-} else {
-  $hasErrors = true;
-  $errorMsg .= "<p>Email is required</p>";
-}
 if( isset($_POST['password']) && ($_POST['password'] != "") ) {
   $password = $_POST['password'];
 } else {
@@ -74,16 +58,17 @@ if( isset($_POST['address']) && ($_POST['address'] != "") ) {
 } else {
   $hasErrors = true;
   $errorMsg .= "<p>Address is required</p>";
-
 }
 
 // Final step
 if($hasErrors) {
   //die("You have errors.");
-  include('register.php');
+  header('location: profile.php?error=there+was+an+error');
 } else {
 
-  $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`,`email`,`password`, `address`, `address_2`, `city`, `state`, `zip`, `phone_number`) VALUES (NULL, '$firstName', '$lastName','$email','$password','$address', '$address_2', '$city', '$state', '$zip', '$phone')";
+include('include/db.php');
+  $sql = "UPDATE `users` SET `first_name` = '$firstName', `last_name` = '$lastName', `password` = '$password', `address` = '$address', `address_2` = '$address_2', `city` = '$city', `state` = '$state', `zip` = '$zip', `phone_number` = '$phone' WHERE `users`.`id` = '$user_id'";
+
 //echo $sql;
 // Perform the query
 mysqli_query($con, $sql);
@@ -96,8 +81,11 @@ mysqli_query($con, $sql);
 mysqli_close($con);
 
 //header("location: /");
-header("location: index.php");
+header("location: profile.php?message=Profile+Updated");
+
 
 }
+
+
 
 ?>

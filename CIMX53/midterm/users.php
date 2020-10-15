@@ -2,27 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Orders</title>
+    <title>Users</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
-  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Orders</h1>
+    <h1>Users</h1>
     <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Size</th>
-      <th scope="col">Toppings</th>
-      <th scope="col">Total</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
+      <th scope="col">Username</th>
+      <th scope="col">Tasks In Progress</th>
+      <th scope="col">Total Tasks Completed</th>
+      <th scope="col">Total Time Completed</th>
     </tr>
   </thead>
   <tbody>
@@ -57,8 +53,10 @@
     ?>
   </tbody>
 </table>
-<h3>Total Orders: <?php echo $total_orders;?> </h3>
+<h3>Total Time: <?php echo $total_orders;?> </h3>
   </div>
+
+
 
 <?php include("include/scripts.php"); ?>
 

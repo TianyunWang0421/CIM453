@@ -8,24 +8,21 @@
   <ul class="navbar-nav mr-auto">
 
     <li class="nav-item active">
-      <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
+      <a class="nav-link" href="home.php">Home<span class="sr-only"></span></a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="events.php">Events</a>
+      <a class="nav-link" href="tasks.php">Tasks</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="order.php">Order</a>
+      <a class="nav-link" href="time.php">Time</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="orders.php">All Orders</a>
+      <a class="nav-link" href="users.php">All Users</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="register.php">Register</a>
-    </li>
   </ul>
 </div>
 </nav>

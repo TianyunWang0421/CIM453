@@ -98,6 +98,9 @@ mysqli_close($con);
 //header("location: /");
 header("location: index.php");
 
+
 }
+
+
 
 ?>
