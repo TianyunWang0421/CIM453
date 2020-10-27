@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Time</title>
+    <title>Events</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
@@ -10,8 +10,8 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Time</h1>
-    <p>Timing attempts to give you an accurate look at how you spend your time. </p>
+    <h1>Events</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla enim at dolorem omnis, excepturi alias doloribus, libero, voluptatibus suscipit accusamus dolore odit minus iusto. Harum natus quia rerum repellat dolorem.</p>
   </div>
 
   <div class="container">

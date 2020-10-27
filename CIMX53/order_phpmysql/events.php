@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Events</title>
-
     <?php include("include/head.php"); ?>
-
   </head>
   <body>
   <?php include("include/navigation.php"); ?>
@@ -34,7 +32,9 @@
 
 </div>
 
-    <?php include("include/scripts.php"); ?>
+
+
+<?php include("include/scripts.php"); ?>
 
   </body>
 </html>

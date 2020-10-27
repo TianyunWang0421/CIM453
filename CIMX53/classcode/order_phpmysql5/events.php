@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tasks</title>
+    <title>Events</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
@@ -10,8 +10,8 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Tasks</h1>
-    <p>Just hit Start and the timer gets going. You can add the task to a project. </p>
+    <h1>Events</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla enim at dolorem omnis, excepturi alias doloribus, libero, voluptatibus suscipit accusamus dolore odit minus iusto. Harum natus quia rerum repellat dolorem.</p>
   </div>
 
   <div class="container">

@@ -6,7 +6,6 @@
     <?php include("include/head.php"); ?>
   </head>
   <body>
-  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
@@ -59,6 +58,8 @@
 </table>
 <h3>Total Orders: <?php echo $total_orders;?> </h3>
   </div>
+
+
 
 <?php include("include/scripts.php"); ?>
 

@@ -17,7 +17,7 @@ error_reporting(E_ALL);
   <body>
     <?php include("include/navigation.php"); ?>
   <div class="jumbotron">
-  <h1 class="display-4"><strong>Timing</strong></h1>
+  <h1 class="display-4">Timing</h1>
   <p class="lead">Hello, my friend! Stay focused at work and get more done with Timing.</p>
   <p>If you’re trying to pick a time-tracking app to help you stay organized, focused, and on task, Timing is the best choice for you.</p>
   <hr class="my-4">
@@ -31,7 +31,6 @@ error_reporting(E_ALL);
     Get an accurate representation of whether you’re spending your time on things that matter
   </li>
   <br>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 
 <div class="container">
@@ -46,14 +45,17 @@ error_reporting(E_ALL);
   <div class="form-group">
   <label for="email">Email address</label>
   <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-  <small id="emailHelp" class="form-text text-muted">Please enter your email here. We'll never share your email with anyone else.</small>
+  <small id="emailHelp" class="form-text text-muted">Please enter your email here. If you do not have an account, we will create one for you now.</small>
   </div>
   <div class="form-group">
   <label for="password">Password</label>
   <input name="password" type="password" class="form-control" id="password">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+<button type="button" class="btn btn-outline-primary">
+<a href="task.php">Log In</a>
+</button>
+
       </form>
 
     </div>
