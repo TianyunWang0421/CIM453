@@ -16,6 +16,10 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="mytask.php">My Task</a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="alltasks.php">All Tasks</a>
     </li>
 
@@ -33,6 +37,10 @@
 
     <li class="nav-item">
       <a class="nav-link" href="allrecords.php">All Records</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="profile.php">My Profile</a>
     </li>
 
     <!-- <li class="nav-item">

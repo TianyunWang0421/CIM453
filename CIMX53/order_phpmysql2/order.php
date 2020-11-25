@@ -8,13 +8,11 @@
   <body>
     <?php include("include/login_check.php"); ?>
     <?php include("include/navigation.php"); ?>
-
   <div class="container">
     <!-- Content here -->
     <h1>Order</h1>
-
   </div>
-
+  
   <div class="container">
   <div class="row">
   <div class="col-md-12"><hr></div>
@@ -83,21 +81,23 @@ $row = mysqli_fetch_assoc($result);
      <label for="phone_number">Phone</label>
      <input value="<?php echo $row['phone_number'];?>" name="phone_number" type="phone" class="form-control" id="phone_number">
    </div>
+   <?php
+   $sql = "SELECT * FROM pizza_toppings WHERE available = 1";
+
+   $result = mysqli_query($con,$sql);
+
+   while($row = mysqli_fetch_assoc($result)) {
+     //
+   ?>
 
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="cheese" name="topping[]" value="cheese">
-    <label class="form-check-label" for="cheese">Cheese </label>
+    <input type="checkbox" class="form-check-input" name="topping[]" value="<?php echo $row['name'];?>">
+    <label class="form-check-label" for="<?php echo $row['name'];?>"><?php echo $row['name'];?> </label>
   </div>
 
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="mushrooms" name="topping[]" value="Mushrooms">
-    <label class="form-check-label" for="mushrooms">Mushrooms </label>
-  </div>
+<?php } ?>
 
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="pepperoni" name="topping[]" value="Pepperoni">
-    <label class="form-check-label" for="pepperoni">Pepperoni </label>
-  </div>
+
 
   <div class="form-group">
      <label for="size">Size</label>

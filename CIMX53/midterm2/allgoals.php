@@ -36,6 +36,7 @@
         echo "<td>".$row['whentime']."</td>";
         echo "<td>".$row['description']."</td>";
         echo '<td><a href="goal_details.php?goal_id='.$row['id'].'">View Goal</a></td>';
+        echo '<td><a href="goal_update.php?goal_id='.$row['id'].'">Update Goal</a></td>';
         echo '<td><a href="delete_goal.php?goal_id='.$row['id'].'">Delete Goal</a></td>';
         echo "</tr>";
       }

@@ -37,8 +37,9 @@
         echo "<td>".$row['score']."</td>";
         echo "<td>".$row['repeatit']."</td>";
         echo "<td>".$row['notes']."</td>";
-        echo '<td><a href="record_details.php?record_id='.$row['id'].'">View Records</a></td>';
-        echo '<td><a href="delete_record.php?record_id='.$row['id'].'">Delete Records</a></td>';
+        echo '<td><a href="record_details.php?record_id='.$row['id'].'">View Record</a></td>';
+        echo '<td><a href="record_update.php?record_id='.$row['id'].'">Update Record</a></td>';
+        echo '<td><a href="delete_record.php?record_id='.$row['id'].'">Delete Record</a></td>';
         echo "</tr>";
       }
       // Free result set

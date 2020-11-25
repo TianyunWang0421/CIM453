@@ -41,6 +41,7 @@
         echo "<td>".$row['question']."</td>";
         echo "<td>".$row['comments']."</td>";
         echo '<td><a href="task_details.php?task_id='.$row['id'].'">View Task</a></td>';
+        echo '<td><a href="task_update.php?record_id='.$row['id'].'">Update Task</a></td>';
         echo '<td><a href="delete_task.php?task_id='.$row['id'].'">Delete Task</a></td>';
         echo "</tr>";
       }
