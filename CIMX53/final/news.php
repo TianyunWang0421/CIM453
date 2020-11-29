@@ -21,12 +21,12 @@
 <head>
   <meta charset="utf-8">
   <title>News Story</title>
-  <?php include('inc/header.php');?>
+  <?php include('include/head.php');?>
 </head>
 <body>
-  <?php include('inc/nav.php'); ?>
+  <?php include('include/navigation.php'); ?>
 
-  <?php include('inc/slideshow.php'); ?>
+  <?php include('include/slideshow.php'); ?>
   <div class="container">
     <div class="row">
     <?php foreach ($news_storiesRecords as $record): ?>
@@ -58,7 +58,7 @@
   <!-- /STEP2: Display Records -->
 </div>
 </div>
-<?php include('inc/footer.php');?>
+<?php include('include/footer.php');?>
 
 </body>
 </html>

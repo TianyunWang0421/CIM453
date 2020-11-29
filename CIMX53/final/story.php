@@ -25,10 +25,10 @@
 <head>
   <meta charset="utf-8">
   <title><?php echo htmlencode($news_storiesRecord['title']) ?></title>
-  <?php include('inc/header.php');?>
+  <?php include('include/head.php');?>
 </head>
 <body>
-<?php include('inc/nav.php');?>
+<?php include('include/nav.php');?>
 <div class="container">
   <?php foreach ($news_storiesRecord['main_image'] as $index => $upload): ?>
     <img src="<?php echo htmlencode($upload['urlPath']) ?>"  alt="">
@@ -52,7 +52,7 @@
 
   <a href="<?php echo $news_storiesMetaData['_listPage'] ?>">&lt;&lt; Back to list page</a>
   </div>
-<?php include('inc/footer.php');?>
+<?php include('include/footer.php');?>
 
 </body>
 </html>

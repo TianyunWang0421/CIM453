@@ -43,6 +43,7 @@ if($index == 0) { $activeClass = "active";  }
           <p><?php echo htmlencode($upload['info2']) ?></p>
         </div>
 </div>
+
 <?php endforeach ?>
 </div>
 <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -53,4 +54,5 @@ if($index == 0) { $activeClass = "active";  }
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
 </div>
