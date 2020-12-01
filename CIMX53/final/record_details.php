@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Records</title>
+    <title>This Record</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Records</h1>
+    <h1>This Record</h1>
     <table class="table table-striped">
   <thead>
     <tr>
@@ -56,13 +57,13 @@
 </table>
 
 <hr>
-<h4>Record id: <?php echo $extracted['id'];?> </h4>
-<h4>Record Name: <?php echo $extracted['recordname'];?> </h4>
-
-<h2>Level of Concentration:<?php echo $extracted['score'];?> </h32>
-<h2>Repeat or Not:<?php echo $extracted['repeatit'];?> </h2>
-<h2>Notes: <?php echo $extracted['notes'];?> </h2>
-<!-- <h3>Total: <?php echo $extracted['task_total'];?> </h3> -->
+<ul class="list-group">
+  <li class="list-group-item">Record id: <?php echo $extracted['id'];?> </li>
+  <li class="list-group-item">Record Name: <?php echo $extracted['recordname'];?> </li>
+  <li class="list-group-item">Level of Concentration: <?php echo $extracted['score'];?> </li>
+  <li class="list-group-item">Repeat or Not: <?php echo $extracted['repeatit'];?> </li>
+  <li class="list-group-item">Comments: <?php echo $notes;?> </li>
+</ul>
 
   </div>
 

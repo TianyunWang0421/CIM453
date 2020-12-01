@@ -82,9 +82,6 @@ mysqli_close($con);
 //header("location: /");
 header("location: profile.php?message=Profile+Updated");
 
-
 }
-
-
 
 ?>

@@ -17,12 +17,12 @@ error_reporting(E_ALL);
   <body>
     <?php include("include/navigation.php"); ?>
 
-      <?php include('include/slideshow.php'); ?>
-      
+    <?php include('include/slideshow.php'); ?>
+
   <div class="jumbotron">
   <h1 class="display-4">Timing</h1>
   <p class="lead">Hello, my friend! Stay focused at work and get more done with Timing.</p>
-  <p>If you’re trying to pick a time-tracking app to help you stay organized, focused, and on task, Timing is the best choice for you.</p>
+  <p>If you’re trying to pick a time-tracking app to help you stay organized and focused on your tasks, Timing is the best choice for you.</p>
   <hr class="my-4">
   <li>
     Do your most valuable and important work
@@ -45,19 +45,26 @@ error_reporting(E_ALL);
 
     <div class="col-sm-6">
       <form class="form" action="login_handler.php" method="post">
-  <div class="form-group">
-  <label for="email">Email address</label>
-  <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-  <small id="emailHelp" class="form-text text-muted">Please enter your email here. If you do not have an account, we will create one for you now.</small>
-  </div>
-  <div class="form-group">
-  <label for="password">Password</label>
-  <input name="password" type="password" class="form-control" id="password">
-  </div>
+        <div class="form-group">
+        <label for="email">Email address</label>
+        <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input name="password" type="password" class="form-control" id="password">
+        </div>
 
-<button type="button" class="btn btn-outline-primary">
-<a href="task.php">Log In</a>
-</button>
+  <div class="form-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+        <label class="form-check-label" for="dropdownCheck2">
+          Remember me
+        </label>
+      </div>
+    </div>
+
+<button type="submit" class="btn btn-primary">Log In</button>
 
       </form>
 

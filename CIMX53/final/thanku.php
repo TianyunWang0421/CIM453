@@ -19,7 +19,7 @@
   <div class="col-md-12"><hr></div>
   <div class="col-md-6">
     <div class="alert alert-info" role="alert">
-      Please continue to track your task and make progress every day! 
+      Please continue to track your task and make progress every day!
     </div>
   </div>
 

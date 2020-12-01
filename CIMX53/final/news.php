@@ -25,8 +25,8 @@
 </head>
 <body>
   <?php include('include/navigation.php'); ?>
-
   <?php include('include/slideshow.php'); ?>
+
   <div class="container">
     <div class="row">
     <?php foreach ($news_storiesRecords as $record): ?>

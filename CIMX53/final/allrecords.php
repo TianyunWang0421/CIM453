@@ -6,6 +6,7 @@
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
@@ -19,6 +20,9 @@
       <th scope="col">Level of Concentration</th>
       <th scope="col">Repeate or Not</th>
       <th scope="col">Notes for Myself</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>

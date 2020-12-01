@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Register</title>
+    <title>Profile</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
@@ -11,7 +11,7 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Profile</h1>
+    <h1>My Profile</h1>
   </div>
 
 

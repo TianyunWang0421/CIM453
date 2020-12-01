@@ -29,12 +29,17 @@
     }
     else {
       ?>
-      <h2>Are you sure?</h2>
-      <a href="allgoals.php">No</a>
-      <a href="delete_goal.php?goal_id=<?php echo $_GET['goal_id']; ?>&confirm=1">Yes</a>
+
+      <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">Are you sure?</h4>
+        <hr>
+        <a href="allgoals.php" class="btn btn-success active" role="button" aria-pressed="true">No</a>
+        <a href="delete_goal.php?goal_id=<?php echo $_GET['goal_id']; ?>&confirm=1" class="btn btn-danger active" role="button" aria-pressed="true">Yes</a>
+      </div>
       <?
     }
     ?>
+
   </tbody>
 </table>
   </div>

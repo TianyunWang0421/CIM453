@@ -29,12 +29,17 @@
     }
     else {
       ?>
-      <h2>Are you sure?</h2>
-      <a href="allrecords.php">No</a>
-      <a href="delete_record.php?record_id=<?php echo $_GET['record_id']; ?>&confirm=1">Yes</a>
+
+      <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">Are you sure?</h4>
+        <hr>
+        <a href="allrecords.php" class="btn btn-success active" role="button" aria-pressed="true">No</a>
+        <a href="delete_record.php?record_id=<?php echo $_GET['record_id']; ?>&confirm=1" class="btn btn-danger active" role="button" aria-pressed="true">Yes</a>
+      </div>
       <?
     }
     ?>
+
   </tbody>
 </table>
   </div>

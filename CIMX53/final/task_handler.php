@@ -1,4 +1,5 @@
 <?php
+include('include/login_check.php');
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
@@ -43,7 +44,7 @@ if($hasErrors) {
 } else {
   $comments = $_POST['comments'];
     include('include/db.php');
-    $sql = "INSERT INTO `midtermtiming` (`id`, `taskname`, `starttime`, `endtime`, `question`, `comments`) VALUES (NULL, '$taskname', '$starttime', '$endtime', '$question', '$comments')";
+    $sql = "INSERT INTO `midtermtiming` (`id`, `task_id`, `taskname`, `starttime`, `endtime`, `question`, `comments`) VALUES (NULL,'$task_id', '$taskname', '$starttime', '$endtime', '$question', '$comments')";
 
 // Perform the query
 mysqli_query($con, $sql);

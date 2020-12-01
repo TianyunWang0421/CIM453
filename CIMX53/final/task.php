@@ -6,7 +6,8 @@
     <?php include("include/head.php"); ?>
   </head>
   <body>
-  <?php include("include/navigation.php"); ?>
+    <?php include("include/login_check.php"); ?>
+    <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
@@ -28,7 +29,8 @@
 
   <div class="form-group">
     <label for="taskname">Task Name</label>
-    <input name="taskname" type="text" class="form-control" id="taskname" aria-describedby="tasknamehelp" required>
+      <?php if ( isset($_POST['taskname']) && ($_POST['taskname'] != "") ) {$taskname = $_POST['taskname'];} else {$taskname = "";}?>
+    <input name="taskname" type="text" class="form-control" id="taskname" aria-describedby="tasknamehelp" value="<?php echo $taskname;?>" required>
     <small id="tasknamehelp" class="form-text text-muted">Please enter ONLY your task name.</small>
   </div>
 

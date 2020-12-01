@@ -6,11 +6,12 @@
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Completion Records</h1>
+    <h1>Record My Completed</h1>
 
   </div>
 

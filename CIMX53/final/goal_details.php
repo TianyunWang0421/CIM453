@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Goals</title>
+    <title>This Goal</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Goals</h1>
+    <h1>This Goal</h1>
     <table class="table table-striped">
   <thead>
     <tr>
@@ -54,12 +55,12 @@
 </table>
 
 <hr>
-<h4>Goal id: <?php echo $extracted['id'];?> </h4>
-<h4>Goal Name: <?php echo $extracted['goalname'];?> </h4>
-
-<p>Plan to Finish:<?php echo $extracted['whentime'];?> </p>
-<p>Description: <?php echo $extracted['description'];?> </p>
-<!-- <h3>Total: <?php echo $extracted['task_total'];?> </h3> -->
+<ul class="list-group">
+  <li class="list-group-item">Goal id: <?php echo $extracted['id'];?> </li>
+  <li class="list-group-item">Goal Name: <?php echo $extracted['goalname'];?> </li>
+  <li class="list-group-item">Plan to Finish: <?php echo $extracted['whentime'];?> </li>
+  <li class="list-group-item">Comments: <?php echo $description;?> </li>
+</ul>
 
   </div>
 

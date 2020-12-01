@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tasks</title>
+    <title>Goals</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Tasks</h1>
+    <h1>Goals</h1>
     <table class="table table-striped">
   <thead>
     <tr>
@@ -18,6 +19,9 @@
       <th scope="col">Goal Name</th>
       <th scope="col">Plan to Finish</th>
       <th scope="col">Description</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>

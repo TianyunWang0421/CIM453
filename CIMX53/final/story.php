@@ -41,14 +41,7 @@
 
     <h3>TOPICS: <?php echo join(', ', $news_storiesRecord['topics:values']); ?></h3>
 
-
       _link : <a href="<?php echo $news_storiesRecord['_link'] ?>"><?php echo $news_storiesRecord['_link'] ?></a><br>
-
-      <!-- STEP 2a: Display Uploads for field 'main_image' (Paste this anywhere inside STEP2 to display uploads) -->
-        <!-- Upload Fields: extension, thumbFilePath, isImage, hasThumbnail, urlPath, width, height, thumbUrlPath, thumbWidth, thumbHeight, info1, info2, info3, info4, info5 -->
-
-
-
 
   <a href="<?php echo $news_storiesMetaData['_listPage'] ?>">&lt;&lt; Back to list page</a>
   </div>

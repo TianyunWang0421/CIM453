@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Most Recent Task</title>
+    <title>Update My Most Recent Task</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
   <?php include("include/navigation.php"); ?>
+  <?php include("include/login_check.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>My Most Recent Task</h1>
+    <h1>Update My Most Recent Task</h1>
 
   </div>
 
@@ -43,18 +44,33 @@
 }
   ?>
 
+  <?php
+  $task_id = $_GET['taskrecord_id'];
+  $sql = "SELECT * FROM midtermtiming WHERE id = '$task_id'"; //LIMIT 1
+  include('include/db.php');
+  $result = mysqli_query($con,$sql);
+  //mysqli_num_rows gives the number of items in the query
+  $totalresults = mysqli_num_rows($result);
+  $row = mysqli_fetch_assoc($result);
+  ?>
+
   <form method="POST" action="task_update.php">
 
+    <div class="form-group">
+      <label for="taskname">Task Name</label>
+      <input name="taskname" type="text" class="form-control" id="taskname" aria-describedby="tasknamehelp" value="<?php echo $row['taskname'];?>" required>
+      <small id="tasknamehelp" class="form-text text-muted">Please enter ONLY your task name.</small>
+    </div>
 
-  <div class="form-group">
-    <label for="starttime">Start Time (hr:min)</label>
-    <input name="starttime" type="text" class="form-control" id="starttime" aria-describedby="starttime">
-  </div>
+    <div class="form-group">
+      <label for="starttime">Start Time (hr:min)</label>
+      <input name="starttime" type="text" class="form-control" id="starttime" value="<?php echo $row['starttime'];?>">
+    </div>
 
-  <div class="form-group">
-    <label for="endtime">End Time (hr:min)</label>
-    <input name="endtime" type="text" class="form-control" id="endtime" aria-describedby="endtime">
-  </div>
+    <div class="form-group">
+      <label for="endtime">End Time (hr:min)</label>
+      <input name="endtime" type="text" class="form-control" id="endtime" value="<?php echo $row['endtime'];?>">
+    </div>
 
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

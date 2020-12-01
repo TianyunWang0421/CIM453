@@ -2,15 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tasks</title>
+    <title>This Task</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
+  <?php include("include/login_check.php"); ?>
   <?php include("include/navigation.php"); ?>
 
   <div class="container">
     <!-- Content here -->
-    <h1>Tasks</h1>
+    <h1>This Task</h1>
     <table class="table table-striped">
   <thead>
     <tr>
@@ -27,7 +28,7 @@
     $extracted = [];
 
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermtiming` WHERE id = ".$_GET['task_id'];
+    $sql = "SELECT * FROM `midtermtiming` WHERE id = ".$_GET['taskrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
@@ -56,13 +57,13 @@
 </table>
 
 <hr>
-<h4>Task id: <?php echo $extracted['id'];?> </h4>
-<h4>Task Name: <?php echo $extracted['taskname'];?> </h4>
-
-<h2>Start Time:<?php echo $extracted['starttime'];?> </h32>
-<h2>End Time:<?php echo $extracted['endtime'];?> </h2>
-<h2>Comments: <?php echo $extracted['comments'];?> </h2>
-<!-- <h3>Total: <?php echo $extracted['task_total'];?> </h3> -->
+<ul class="list-group">
+  <li class="list-group-item">Task id: <?php echo $extracted['task_id'];?> </li>
+  <li class="list-group-item">Task Name: <?php echo $extracted['taskname'];?> </li>
+  <li class="list-group-item">Start Time: <?php echo $extracted['starttime'];?> </li>
+  <li class="list-group-item">End Time: <?php echo $extracted['endtime'];?> </li>
+  <li class="list-group-item">Comments: <?php echo $comments;?> </li>
+</ul>
 
   </div>
 

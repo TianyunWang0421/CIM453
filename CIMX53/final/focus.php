@@ -17,14 +17,15 @@
   <div class="container">
   <div class="row">
   <div class="col-md-12"><hr></div>
-  <div class="col-md-6">
-    <h3>Task Summary</h3>
-    <h2>Your task is:<br> <?php echo $taskname; ?> </h2>
-    <p>Your start time is: <?php echo $starttime; ?></p>
-    <p>Your end time is: <?php echo $endtime; ?></p>
-    <p>End Alarm: <?php echo $question; ?></p>
-    <p>Comments: <?php echo $comments; ?></p>
-  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item"><h3>Task Summary</h3></li>
+    <li class="list-group-item">Your task is:<br> <?php echo $taskname; ?> </li>
+    <li class="list-group-item">Your start time is: <?php echo $starttime; ?></li>
+    <li class="list-group-item">Your end time is: <?php echo $endtime; ?></li>
+    <li class="list-group-item">End Alarm: <?php echo $question; ?></li>
+    <li class="list-group-item">Comments: <?php echo $comments; ?></li>
+  </ul>
 
   </div>
 </div>

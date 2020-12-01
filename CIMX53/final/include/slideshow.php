@@ -39,8 +39,8 @@ if($index == 0) { $activeClass = "active";  }
 <div class="carousel-item <?php echo $activeClass;?>">
 <img src="<?php echo htmlencode($upload['urlPath']) ?>" class="d-block w-100"  alt="">
         <div class="carousel-caption d-none d-md-block">
-          <h5><?php echo htmlencode($upload['info1']) ?></h5>
-          <p><?php echo htmlencode($upload['info2']) ?></p>
+          <h3><?php echo htmlencode($upload['info1']) ?></h3>
+          <h4><?php echo htmlencode($upload['info2']) ?></h4>
         </div>
 </div>
 
