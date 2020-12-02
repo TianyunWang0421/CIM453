@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Update My Task</title>
+    <title>Update My Goal</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
@@ -11,7 +11,7 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Update My Task</h1>
+    <h1>Update My Goal</h1>
 
   </div>
 
@@ -45,8 +45,8 @@
   ?>
 
   <?php
-  $task_id = $_GET['taskrecord_id'];
-  $sql = "SELECT * FROM midtermtiming WHERE id = '$task_id'"; //LIMIT 1
+  $goal_id = $_GET['goalrecord_id'];
+  $sql = "SELECT * FROM midtermgoals WHERE id = '$goal_id'"; //LIMIT 1
   include('include/db.php');
   $result = mysqli_query($con,$sql);
   //mysqli_num_rows gives the number of items in the query
@@ -54,24 +54,14 @@
   $row = mysqli_fetch_assoc($result);
   ?>
 
-  <form method="POST" action="task_update.php">
+  <form method="POST" action="goal_update.php">
 
-    <input type="hidden" name="taskrecord_id" value="<?php echo $_GET['taskrecord_id']?>">
-
-    <div class="form-group">
-      <label for="taskname">Task Name</label>
-      <input name="taskname" type="text" class="form-control" id="taskname" aria-describedby="tasknamehelp" value="<?php echo $row['taskname'];?>" required>
-      <small id="tasknamehelp" class="form-text text-muted">Please enter ONLY your task name.</small>
-    </div>
+    <input type="hidden" name="goalrecord_id" value="<?php echo $_GET['goalrecord_id']?>">
 
     <div class="form-group">
-      <label for="starttime">Start Time (hr:min)</label>
-      <input name="starttime" type="text" class="form-control" id="starttime" value="<?php echo $row['starttime'];?>">
-    </div>
-
-    <div class="form-group">
-      <label for="endtime">End Time (hr:min)</label>
-      <input name="endtime" type="text" class="form-control" id="endtime" value="<?php echo $row['endtime'];?>">
+      <label for="goalname">Goal Name</label>
+      <input name="goalname" type="text" class="form-control" id="goalname" aria-describedby="goalnamehelp" value="<?php echo $row['goalname'];?>" required>
+      <small id="goalnamehelp" class="form-text text-muted">Please enter ONLY your goal name.</small>
     </div>
 
   <button type="submit" class="btn btn-primary">Update</button>

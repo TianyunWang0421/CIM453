@@ -58,7 +58,7 @@
 
 <hr>
 <ul class="list-group">
-  <li class="list-group-item">Task id: <?php echo $extracted['task_id'];?> </li>
+  <li class="list-group-item">Task id: <?php echo $extracted['id'];?> </li>
   <li class="list-group-item">Task Name: <?php echo $extracted['taskname'];?> </li>
   <li class="list-group-item">Start Time: <?php echo $extracted['starttime'];?> </li>
   <li class="list-group-item">End Time: <?php echo $extracted['endtime'];?> </li>

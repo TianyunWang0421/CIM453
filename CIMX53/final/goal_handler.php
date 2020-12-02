@@ -1,6 +1,4 @@
 <?php
-include('include/login_check.php');
-$user_id = $_SESSION['user_id'];
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
@@ -27,7 +25,7 @@ if( isset($_POST['whentime']) && ($_POST['whentime'] != "") ) {
 
 if($hasErrors) {
   //die("You have errors.");
-  include('task.php');
+  include('goal.php');
 } else {
   $description = $_POST['description'];
     include('include/db.php');
@@ -46,7 +44,5 @@ mysqli_close($con);
 
   include('thanku.php');
 }
-
-
 
 ?>

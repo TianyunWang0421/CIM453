@@ -1,6 +1,4 @@
 <?php
-include('include/login_check.php');
-$user_id = $_SESSION['user_id'];
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
@@ -67,7 +65,5 @@ mysqli_close($con);
 
   include('thanku.php');
 }
-
-
 
 ?>

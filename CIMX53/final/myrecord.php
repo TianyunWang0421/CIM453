@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Update My Task</title>
+    <title>Update My Record</title>
     <?php include("include/head.php"); ?>
   </head>
   <body>
@@ -11,7 +11,7 @@
 
   <div class="container">
     <!-- Content here -->
-    <h1>Update My Task</h1>
+    <h1>Update My Record</h1>
 
   </div>
 
@@ -45,8 +45,8 @@
   ?>
 
   <?php
-  $task_id = $_GET['taskrecord_id'];
-  $sql = "SELECT * FROM midtermtiming WHERE id = '$task_id'"; //LIMIT 1
+  $record_id = $_GET['recordrecord_id'];
+  $sql = "SELECT * FROM midtermrecord WHERE id = '$record_id'"; //LIMIT 1
   include('include/db.php');
   $result = mysqli_query($con,$sql);
   //mysqli_num_rows gives the number of items in the query
@@ -54,24 +54,19 @@
   $row = mysqli_fetch_assoc($result);
   ?>
 
-  <form method="POST" action="task_update.php">
+  <form method="POST" action="record_update.php">
 
-    <input type="hidden" name="taskrecord_id" value="<?php echo $_GET['taskrecord_id']?>">
+    <input type="hidden" name="recordrecord_id" value="<?php echo $_GET['recordrecord_id']?>">
 
     <div class="form-group">
-      <label for="taskname">Task Name</label>
-      <input name="taskname" type="text" class="form-control" id="taskname" aria-describedby="tasknamehelp" value="<?php echo $row['taskname'];?>" required>
-      <small id="tasknamehelp" class="form-text text-muted">Please enter ONLY your task name.</small>
+      <label for="recordname">Task / Goal Name</label>
+      <input name="recordname" type="text" class="form-control" id="recordname" aria-describedby="recordnamehelp" value="<?php echo $row['recordname'];?>" required>
+      <small id="recordnamehelp" class="form-text text-muted">Please enter your Task Name OR Goal Name.</small>
     </div>
 
     <div class="form-group">
-      <label for="starttime">Start Time (hr:min)</label>
-      <input name="starttime" type="text" class="form-control" id="starttime" value="<?php echo $row['starttime'];?>">
-    </div>
-
-    <div class="form-group">
-      <label for="endtime">End Time (hr:min)</label>
-      <input name="endtime" type="text" class="form-control" id="endtime" value="<?php echo $row['endtime'];?>">
+      <label for="spenttime">Time You Spent (in minutes)</label>
+      <input name="spenttime" type="text" class="form-control" id="spenttime" value="<?php echo $row['spenttime'];?>">
     </div>
 
   <button type="submit" class="btn btn-primary">Update</button>
