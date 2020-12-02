@@ -26,7 +26,7 @@
     $extracted = [];
 
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermgoals` WHERE id = ".$_GET['goal_id'];
+    $sql = "SELECT * FROM `midtermgoals` WHERE id = ".$_GET['goalrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {

@@ -27,7 +27,7 @@
     $extracted = [];
 
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermrecord` WHERE id = ".$_GET['record_id'];
+    $sql = "SELECT * FROM `midtermrecord` WHERE id = ".$_GET['recordrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {

@@ -1,7 +1,4 @@
 <?php
-include('include/login_check.php');
-$goal_id = $_SESSION['goal_id'];
-// Here we will handle the pizza order form
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
@@ -12,6 +9,12 @@ $hasErrors = false;
 $errorMsg = "";
 $goalname = "";
 
+if( isset($_POST['goalrecord_id']) && ($_POST['goalrecord_id'] != "") ) {
+  $goal_id = $_POST['goalrecord_id'];
+} else {
+  $hasErrors = true;
+  $errorMsg .= "<p>Goalrecord_id is required</p>";
+}
 
 if ( isset($_POST['goalname']) && ($_POST['goalname'] != "") ) {
   $goalname = $_POST['goalname'];
@@ -23,11 +26,11 @@ if ( isset($_POST['goalname']) && ($_POST['goalname'] != "") ) {
 // Final step
 if($hasErrors) {
   //die("You have errors.");
-  header('location: goal.php');
+  header('location: mygoal.php?error=there+was+an+error');
 } else {
 
 include('include/db.php');
-  $sql = "UPDATE `midtermgoal` SET `goalname` = '$goalname' WHERE `midtermgoal`.`id` = '$goal_id'";
+  $sql = "UPDATE `midtermgoals` SET `goalrecord_id` = '$goal_id', `goalname` = '$goalname' WHERE `midtermgoals`.`id` = '$goal_id'";
 
 //echo $sql;
 // Perform the query
@@ -41,7 +44,7 @@ mysqli_query($con, $sql);
 mysqli_close($con);
 
 //header("location: /");
-header("location: goal.php?message=Goal+Updated");
+header("location: mygoal.php?message=Goal+Updated&goalrecord_id=".$goal_id);
 
 
 }

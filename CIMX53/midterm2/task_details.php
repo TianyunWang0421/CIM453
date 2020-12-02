@@ -27,7 +27,7 @@
     $extracted = [];
 
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermtiming` WHERE id = ".$_GET['task_id'];
+    $sql = "SELECT * FROM `midtermtiming` WHERE id = ".$_GET['taskrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {

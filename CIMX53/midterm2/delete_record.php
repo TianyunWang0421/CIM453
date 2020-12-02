@@ -15,7 +15,7 @@
     <?php
     if(isset($_GET['confirm'])){
     include('include/db.php');
-    $sql = "DELETE FROM `midtermrecord` WHERE id = ".$_GET['record_id'];
+    $sql = "DELETE FROM `midtermrecord` WHERE id = ".$_GET['recordrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
@@ -31,7 +31,7 @@
       ?>
       <h2>Are you sure?</h2>
       <a href="allrecords.php">No</a>
-      <a href="delete_record.php?record_id=<?php echo $_GET['record_id']; ?>&confirm=1">Yes</a>
+      <a href="delete_record.php?recordrecord_id=<?php echo $_GET['recordrecord_id']; ?>&confirm=1">Yes</a>
       <?
     }
     ?>

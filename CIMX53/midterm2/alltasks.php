@@ -27,22 +27,22 @@
     $total_tasks = 0;
     $total_time = 0;
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermtiming`";
+    $sql = "SELECT midtermtiming.id AS 'taskrecord_id',midtermtiming.taskname AS 'taskname',midtermtiming.starttime AS 'starttime',midtermtiming.endtime AS 'endtime',midtermtiming.question AS 'question',midtermtiming.comments AS 'comments' FROM `midtermtiming`";
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
       $total_tasks = mysqli_num_rows($result);
       while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['taskrecord_id']."</td>";
         echo "<td>".$row['taskname']."</td>";
         echo "<td>".$row['starttime']."</td>";
         echo "<td>".$row['endtime']."</td>";
         echo "<td>".$row['question']."</td>";
         echo "<td>".$row['comments']."</td>";
-        echo '<td><a href="task_details.php?task_id='.$row['id'].'">View Task</a></td>';
-        echo '<td><a href="task_update.php?record_id='.$row['id'].'">Update Task</a></td>';
-        echo '<td><a href="delete_task.php?task_id='.$row['id'].'">Delete Task</a></td>';
+        echo '<td><a href="task_details.php?taskrecord_id='.$row['taskrecord_id'].'">View Task</a></td>';
+        echo '<td><a href="mytask.php?taskrecord_id='.$row['taskrecord_id'].'">Update Task</a></td>';
+        echo '<td><a href="delete_task.php?taskrecord_id='.$row['taskrecord_id'].'">Delete Task</a></td>';
         echo "</tr>";
       }
       // Free result set

@@ -25,21 +25,21 @@
     <?php
     $total_records = 0;
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermrecord`";
+    $sql = "SELECT midtermrecord.id AS 'recordrecord_id',midtermrecord.recordname AS 'recordname',midtermrecord.score AS 'score',midtermrecord.repeatit AS 'repeatit',midtermrecord.notes AS 'notes' FROM `midtermrecord`";
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
       $total_records = mysqli_num_rows($result);
       while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['recordrecord_id']."</td>";
         echo "<td>".$row['recordname']."</td>";
         echo "<td>".$row['score']."</td>";
         echo "<td>".$row['repeatit']."</td>";
         echo "<td>".$row['notes']."</td>";
-        echo '<td><a href="record_details.php?record_id='.$row['id'].'">View Record</a></td>';
-        echo '<td><a href="record_update.php?record_id='.$row['id'].'">Update Record</a></td>';
-        echo '<td><a href="delete_record.php?record_id='.$row['id'].'">Delete Record</a></td>';
+        echo '<td><a href="record_details.php?recordrecord_id='.$row['recordrecord_id'].'">View Record</a></td>';
+        echo '<td><a href="myrecord.php?recordrecord_id='.$row['recordrecord_id'].'">Update Record</a></td>';
+        echo '<td><a href="delete_record.php?recordrecord_id='.$row['recordrecord_id'].'">Delete Record</a></td>';
         echo "</tr>";
       }
       // Free result set

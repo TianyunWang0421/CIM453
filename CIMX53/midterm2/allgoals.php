@@ -24,20 +24,20 @@
     <?php
     $total_goals = 0;
     include('include/db.php');
-    $sql = "SELECT * FROM `midtermgoals`";
+    $sql = "SELECT midtermgoals.id AS 'goalrecord_id',midtermgoals.goalname AS 'goalname',midtermgoals.whentime AS 'whentime',midtermgoals.description AS 'description' FROM `midtermgoals`";
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
       $total_goals = mysqli_num_rows($result);
       while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['goalrecord_id']."</td>";
         echo "<td>".$row['goalname']."</td>";
         echo "<td>".$row['whentime']."</td>";
         echo "<td>".$row['description']."</td>";
-        echo '<td><a href="goal_details.php?goal_id='.$row['id'].'">View Goal</a></td>';
-        echo '<td><a href="goal_update.php?goal_id='.$row['id'].'">Update Goal</a></td>';
-        echo '<td><a href="delete_goal.php?goal_id='.$row['id'].'">Delete Goal</a></td>';
+        echo '<td><a href="goal_details.php?goalrecord_id='.$row['goalrecord_id'].'">View Goal</a></td>';
+        echo '<td><a href="mygoal.php?goalrecord_id='.$row['goalrecord_id'].'">Update Goal</a></td>';
+        echo '<td><a href="delete_goal.php?goalrecord_id='.$row['goalrecord_id'].'">Delete Goal</a></td>';
         echo "</tr>";
       }
       // Free result set

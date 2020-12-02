@@ -15,7 +15,7 @@
     <?php
     if(isset($_GET['confirm'])){
     include('include/db.php');
-    $sql = "DELETE FROM `midtermtiming` WHERE id = ".$_GET['task_id'];
+    $sql = "DELETE FROM `midtermtiming` WHERE id = ".$_GET['taskrecord_id'];
     //$result = mysql_query($con,$sql);
     // Perform query
     if ($result = mysqli_query($con, $sql)) {
@@ -31,7 +31,7 @@
       ?>
       <h2>Are you sure?</h2>
       <a href="alltasks.php">No</a>
-      <a href="delete_task.php?task_id=<?php echo $_GET['task_id']; ?>&confirm=1">Yes</a>
+      <a href="delete_task.php?taskrecord_id=<?php echo $_GET['taskrecord_id']; ?>&confirm=1">Yes</a>
       <?
     }
     ?>

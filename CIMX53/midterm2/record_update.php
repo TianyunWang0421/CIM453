@@ -1,7 +1,4 @@
 <?php
-include('include/login_check.php');
-$record_id = $_SESSION['record_id'];
-// Here we will handle the pizza order form
 // GET server variable in PHP $_GET
 // POST server variable in PHP $_POST
 
@@ -13,6 +10,12 @@ $errorMsg = "";
 $recordname = "";
 $spenttime = "";
 
+if( isset($_POST['recordrecord_id']) && ($_POST['recordrecord_id'] != "") ) {
+  $record_id = $_POST['recordrecord_id'];
+} else {
+  $hasErrors = true;
+  $errorMsg .= "<p>Recordrecord_id is required</p>";
+}
 
 if ( isset($_POST['recordname']) && ($_POST['recordname'] != "") ) {
   $recordname = $_POST['recordname'];
@@ -31,11 +34,11 @@ if( isset($_POST['spenttime']) && ($_POST['spenttime'] != "") ) {
 // Final step
 if($hasErrors) {
   //die("You have errors.");
-  header('location: record.php');
+  header('location: myrecord.php?error=there+was+an+error');
 } else {
 
 include('include/db.php');
-  $sql = "UPDATE `midtermrecord` SET `recordname` = '$recordname', `spenttime` = '$spenttime' WHERE `midtermrecord`.`id` = '$record_id'";
+  $sql = "UPDATE `midtermrecord` SET `recordrecord_id` = '$record_id', `recordname` = '$recordname', `spenttime` = '$spenttime' WHERE `midtermrecord`.`id` = '$record_id'";
 
 //echo $sql;
 // Perform the query
@@ -49,7 +52,7 @@ mysqli_query($con, $sql);
 mysqli_close($con);
 
 //header("location: /");
-header("location: record.php?message=Record+Updated");
+header("location: myrecord.php?message=Record+Updated&recordrecord_id=".$record_id);
 
 
 }
